@@ -430,7 +430,7 @@ function Footer() {
         </div>
 
         <div className="mt-8 pt-6 border-t border-dark-border text-center text-white/40 text-sm">
-          &copy; {new Date().getFullYear()} AquaForge Power Washing. All rights reserved.
+          &copy; {new Date().getFullYear()} AquaForge Power Washing. All rights reserved. | Licensed &amp; Insured
         </div>
       </div>
     </footer>
