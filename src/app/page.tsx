@@ -38,7 +38,7 @@ const services = [
 ];
 
 const trustPoints = [
-  { title: "Locally Owned", desc: "We live and work in the Tampa Bay area. Your neighbors are our neighbors." },
+  { title: "Veteran & Locally Owned", desc: "Navy veteran owned and operated, proudly serving the Tampa Bay community." },
   { title: "Reliable & On Time", desc: "We show up when we say we will — no excuses, no runaround." },
   { title: "Fully Equipped", desc: "Commercial-grade equipment for every job, big or small." },
   { title: "Satisfaction Guaranteed", desc: "Not happy? We'll come back and make it right. Period." },
