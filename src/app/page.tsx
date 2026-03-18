@@ -266,10 +266,29 @@ function WhyChooseUs() {
 
 function QuoteForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
-    setSubmitted(true);
+    setSubmitting(true);
+
+    const form = e.currentTarget;
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch("https://formspree.io/f/mgonrryj", {
+        method: "POST",
+        body: data,
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        setSubmitted(true);
+      }
+    } catch {
+      // silently fail — form still shows
+    } finally {
+      setSubmitting(false);
+    }
   }
 
   return (
@@ -374,9 +393,10 @@ function QuoteForm() {
 
             <button
               type="submit"
-              className="w-full bg-sky-blue hover:bg-sky-blue-dark text-white font-bold py-4 rounded-lg text-lg transition-colors cursor-pointer"
+              disabled={submitting}
+              className="w-full bg-sky-blue hover:bg-sky-blue-dark disabled:opacity-60 text-white font-bold py-4 rounded-lg text-lg transition-colors cursor-pointer"
             >
-              Submit Request
+              {submitting ? "Sending..." : "Submit Request"}
             </button>
           </form>
         )}
