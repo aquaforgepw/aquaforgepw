@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   title: "AquaForge Power Washing | Tampa Bay Area",
   description:
     "Professional power washing services in the Tampa Bay area. Driveways, decks, roofs, pools, and more. Call 813-400-0379 for a free quote.",
+  icons: {
+    icon: "/favicon.ico",
+    apple: "/apple-touch-icon.png",
+  },
 };
 
 export default function RootLayout({
